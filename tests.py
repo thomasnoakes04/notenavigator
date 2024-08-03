@@ -27,6 +27,10 @@ class TestScales(unittest.TestCase):
         self.assertEqual(get_scale('Bb', 'major'), ['A#', 'C', 'D', 'D#', 'F', 'G', 'A', 'A#'])
         self.assertEqual(get_scale('Eb', 'major'), ['D#', 'F', 'G', 'G#', 'A#', 'C', 'D', 'D#'])
 
+    def test_enharmonic_equivalent_handling(self):
+        self.assertEqual(get_scale('Cb', 'major'), get_scale('B', 'major')) 
+        self.assertEqual(get_scale('E#', 'harmonic minor'), get_scale('F', 'harmonic minor'))
+
 
 if __name__ == "__main__":
     unittest.main()

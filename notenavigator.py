@@ -13,8 +13,8 @@ def get_scale(root: str, scale_type: str) -> list[str]:
 
     # Eliminate flats in favour of sharps:
     if 'b' in root:
-        index = NOTES.index(root) - 1
-        root = NOTES[index] + '#'
+        index = NOTES.index(root[0]) - 1
+        root = NOTES[index]
 
     # Eliminate enharmonic equivalents:
     match root:
@@ -29,7 +29,6 @@ def get_scale(root: str, scale_type: str) -> list[str]:
     for interval in SCALES[scale_type]:
         current_index = (current_index + interval) % 12
         scale.append(NOTES[current_index])
-
 
     return scale
 
