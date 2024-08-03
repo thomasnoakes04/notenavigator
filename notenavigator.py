@@ -31,4 +31,3 @@ def get_scale(root: str, scale_type: str) -> list[str]:
         scale.append(NOTES[current_index])
 
     return scale
-
